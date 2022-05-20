@@ -1,37 +1,38 @@
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { Form, Item, Input, Label, Right } from 'native-base';
+import { Form, Item, Input, Label, Right,Icon } from 'native-base'
 
-const Signin = ({navigation}) => {
+
+const ChangePassword = ({navigation}) => {
   return (
     <View style={styles.body} >
         <ScrollView showsHorizontalScrollIndicator={false}>
             <View style={{marginTop:15}}>
                 <Text style={styles.logo}>Olòfòófò</Text>
+                
             </View>
             <View style={{marginTop:15}}>
-                <Text style={styles.signin}>Sign In</Text>
+                <Text style={styles.signin} >Pick a new Password</Text>
             </View>
             <View style={{marginTop:6}}>
-                <Text style={styles.signinSub}>Enter your credentials</Text>
+                <Text style={styles.signinSub}>Help secure your account</Text>
             </View>
             <View style={{marginTop:25}}>
             <Form>
                 <View>
-                    <Label style={styles.label}>Username</Label>
+                    <Label style={styles.label}>New Password</Label>
                     <Item regular>
-                        <Input style={styles.input} />
+                        <Input secureTextEntry={true}  style={styles.input} />
                     </Item>
                 </View>
+
                 <View style={{marginTop:16}}>
-                    <Label style={styles.label}>Password</Label>
+                    <Label style={styles.label}>Confirm new Password</Label>
                     <Item regular>
-                        <Input secureTextEntry={true} style={styles.input} />
+                        <Input secureTextEntry={true}  style={styles.input} />
                     </Item>
                 </View>
-                <View style={{flex:1,alignContent:'flex-end'}}>
-                    <Text onPress={()=>{navigation.navigate('Forgot')}}  style={styles.forgot}>Forgot Password?</Text>
-                </View>
+                
                 
             </Form>
             </View>
@@ -39,8 +40,8 @@ const Signin = ({navigation}) => {
             
         </ScrollView>
         <View style={styles.footer}>
-            <TouchableOpacity style={styles.btndone}>
-                <Text style={styles.btntxt}>Sign in</Text>
+            <TouchableOpacity style={styles.btndone} onPress={()=>navigation.navigate('Welcome')}>
+                <Text style={styles.btntxt}>Done</Text>
             </TouchableOpacity>
             <View style={styles.bottomView}>
                 <Text style={styles.bottomTxtx}>Do not have an Account? <Text onPress={()=>{navigation.navigate('Signup')}} style={{color:'#006175'}}>Sign up</Text></Text>
@@ -50,7 +51,7 @@ const Signin = ({navigation}) => {
   )
 }
 
-export default Signin
+export default ChangePassword
 
 const styles = StyleSheet.create({
     body:{
@@ -58,11 +59,6 @@ const styles = StyleSheet.create({
         marginVertical:25,
         marginHorizontal:20,
         
-    },
-    logo:{
-        fontFamily:'Poppins-Black',
-        fontSize:30,
-        color:'black'
     },
     signin:{
         fontFamily:'Poppins-Regular',
@@ -98,6 +94,7 @@ const styles = StyleSheet.create({
         paddingTop:10,
     },
     footer:{
+        position:'relative',
        bottom:0,
     },
     btndone:{

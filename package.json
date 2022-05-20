@@ -19,7 +19,11 @@
     "native-base": "^2.15.2",
     "react": "17.0.2",
     "react-native": "0.68.1",
+    "react-native-dropdown-picker": "^5.4.2",
     "react-native-elements": "^3.4.2",
+    "react-native-input-code": "^1.1.0",
+    "react-native-modal": "^13.0.1",
+    "react-native-neat-date-picker": "^1.2.2",
     "react-native-onboarding-swiper": "^1.2.0",
     "react-native-safe-area-context": "^3.4.1",
     "react-native-screens": "^3.11.0"

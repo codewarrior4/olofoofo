@@ -29,9 +29,6 @@ const Forgot = ({navigation}) => {
                         <Input style={styles.input} />
                     </Item>
                 </View>
-                <View style={{flex:1,alignContent:'flex-end'}}>
-                    <Text onPress={()=>{navigation.navigate('Forgot')}}  style={styles.forgot}>Forgot Password?</Text>
-                </View>
                 
             </Form>
             </View>
