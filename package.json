@@ -25,8 +25,10 @@
     "react-native-modal": "^13.0.1",
     "react-native-neat-date-picker": "^1.2.2",
     "react-native-onboarding-swiper": "^1.2.0",
+    "react-native-phone-number-input": "^2.1.0",
     "react-native-safe-area-context": "^3.4.1",
-    "react-native-screens": "^3.11.0"
+    "react-native-screens": "^3.11.0",
+    "react-native-vector-icons": "^9.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",

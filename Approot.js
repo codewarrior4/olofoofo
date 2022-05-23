@@ -9,6 +9,7 @@ import Otp from './src/Pages/Auth/Otp';
 import ChangePassword from './src/Pages/Auth/ChangePassword';
 import Welcome from './src/Pages/Auth/Welcome';
 import Signup from './src/Pages/Auth/Signup';
+import Tabs from './src/utils/Tabs';
 
 const Approot = () => {
     const [checking,setIsChecking] = useState(true)
@@ -17,7 +18,7 @@ const Approot = () => {
     setTimeout(()=>{
       setIsChecking(false);
       setIsNew(false)
-    },3000)
+    },1000)
 
   
     if(checking){
@@ -40,6 +41,7 @@ const Approot = () => {
                 <Stack.Screen name='Otp' component={Otp}/>
                 <Stack.Screen name='ChangePassword' component={ChangePassword}/>
                 <Stack.Screen name='Welcome' component={Welcome}/>
+                <Stack.Screen name='Index' component={Tabs}/>
               
               
               </Stack.Group>

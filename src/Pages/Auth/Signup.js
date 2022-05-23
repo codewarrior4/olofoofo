@@ -1,14 +1,20 @@
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Dimensions, Button } from 'react-native'
-import React,{useState} from 'react'
+import React,{useState,useRef} from 'react'
 import { Form, Item, Input, Label, Right, Textarea } from 'native-base';
 import DropDownPicker from 'react-native-dropdown-picker';
 import DatePicker from 'react-native-neat-date-picker'
+import PhoneInput from "react-native-phone-number-input";
 
 const Signup = ({navigation}) => {
     
 
     var today = new Date();
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    const [values, setValues] = useState("");
+    const [formattedValue, setFormattedValue] = useState("");
+    const [valid, setValid] = useState(false);
+    const [showMessage, setShowMessage] = useState(false);
+    const phoneInput = useRef(null);
 
     const[dob,setDob] = useState(date)
     const [open, setOpen] = useState(false);
@@ -35,6 +41,7 @@ const Signup = ({navigation}) => {
     setDob(date.dateString)
   }
 
+
   return (
     <View style={styles.body} >
         <ScrollView>
@@ -60,6 +67,26 @@ const Signup = ({navigation}) => {
                     <Item regular>
                         <Input keyboardType='email-address' style={styles.input} />
                     </Item>
+                </View>
+                <View style={{marginTop:16}}>
+                    <Label style={styles.label}>Phone</Label>
+                    <PhoneInput
+                        ref={phoneInput}
+                        defaultValue={values}
+                        defaultCode="NG"
+                        layout="first"
+                        onChangeText={(text) => {
+                        setValues(text);
+                        }}
+                        onChangeFormattedText={(text) => {
+                        setFormattedValue(text);
+                        }}
+                        withDarkTheme
+                        containerStyle={styles.input}
+                        textContainerStyle={{height:60}}
+                        textInputStyle={{fontFamily:'Poppins-Regular',paddingVertical:0}}
+                        codeTextStyle={{fontFamily:'Poppins-Regular'}}
+                    />
                 </View>
                 <View style={{marginTop:16,flex:1,flexDirection:'row',justifyContent:'space-between',}}>
                     <View style={{width:Dimensions.get('window').width/3}}>

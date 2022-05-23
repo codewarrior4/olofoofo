@@ -39,7 +39,7 @@ const Signin = ({navigation}) => {
             
         </ScrollView>
         <View style={styles.footer}>
-            <TouchableOpacity style={styles.btndone}>
+            <TouchableOpacity style={styles.btndone} onPress={()=>{navigation.navigate('Index')}}  >
                 <Text style={styles.btntxt}>Sign in</Text>
             </TouchableOpacity>
             <View style={styles.bottomView}>
